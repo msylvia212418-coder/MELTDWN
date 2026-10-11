@@ -74,15 +74,27 @@ export function updateGame(state) {
 
   // ── Menu state ──
   if (state.gameState === STATE.MENU) {
-    if (wasPressed('Enter') || wasPressed('NumpadEnter') || (click && click.y >= CANVAS_H / 2 && click.y <= CANVAS_H / 2 + 40)) {
+    const btnW = 340;
+    const btnX = CANVAS_W / 2 - btnW / 2;
+    const inBtnX = click && click.x >= btnX && click.x <= btnX + btnW;
+
+    if (wasPressed('Enter') || wasPressed('NumpadEnter') || (inBtnX && click.y >= 250 && click.y <= 292)) {
       startGame(state);
       return;
     }
-    if (wasPressed('KeyI') || (click && click.y >= CANVAS_H / 2 + 42 && click.y <= CANVAS_H / 2 + 70)) {
+    if (wasPressed('KeyI') || (inBtnX && click.y >= 302 && click.y <= 340)) {
       state.gameState = STATE.INSTRUCTIONS;
       return;
     }
-    if (wasPressed('KeyM') || (click && click.y >= CANVAS_H / 2 + 72 && click.y <= CANVAS_H / 2 + 105)) {
+    if (wasPressed('KeyP') || (inBtnX && click.y >= 350 && click.y <= 388)) {
+      state.gameState = STATE.PERMITS;
+      return;
+    }
+    if (wasPressed('KeyC') || (inBtnX && click.y >= 398 && click.y <= 436)) {
+      state.gameState = STATE.CREDITS;
+      return;
+    }
+    if (wasPressed('KeyM') || (inBtnX && click.y >= 446 && click.y <= 480)) {
       toggleMute();
       return;
     }
@@ -91,7 +103,23 @@ export function updateGame(state) {
 
   // ── Instructions ──
   if (state.gameState === STATE.INSTRUCTIONS) {
-    if (wasPressed('Enter') || wasPressed('Escape') || wasPressed('NumpadEnter') || click) {
+    if (wasPressed('Enter') || wasPressed('Escape') || wasPressed('NumpadEnter') || wasPressed('KeyI') || click) {
+      state.gameState = STATE.MENU;
+    }
+    return;
+  }
+
+  // ── Permits Ledger ──
+  if (state.gameState === STATE.PERMITS) {
+    if (wasPressed('Enter') || wasPressed('Escape') || wasPressed('NumpadEnter') || wasPressed('KeyP') || click) {
+      state.gameState = STATE.MENU;
+    }
+    return;
+  }
+
+  // ── Credits ──
+  if (state.gameState === STATE.CREDITS) {
+    if (wasPressed('Enter') || wasPressed('Escape') || wasPressed('NumpadEnter') || wasPressed('KeyC') || click) {
       state.gameState = STATE.MENU;
     }
     return;
@@ -147,14 +175,21 @@ export function updateGame(state) {
   }
 
   if (state.gameState === STATE.PAUSED) {
-    const pBtnW = 280;
+    const ph = 246;
+    const py = (CANVAS_H - ph) / 2;
+    const pBtnW = 260;
     const pBtnX = CANVAS_W / 2 - pBtnW / 2;
-    if (wasPressed('Escape') || (click && click.x >= pBtnX && click.x <= pBtnX + pBtnW && click.y >= CANVAS_H / 2 + 5 && click.y <= CANVAS_H / 2 + 35)) {
+    if (wasPressed('Escape') || (click && click.x >= pBtnX && click.x <= pBtnX + pBtnW && click.y >= py + 118 && click.y <= py + 150)) {
       state.gameState = STATE.PLAYING;
       return;
     }
-    if (wasPressed('KeyR') || (click && click.x >= pBtnX && click.x <= pBtnX + pBtnW && click.y >= CANVAS_H / 2 + 38 && click.y <= CANVAS_H / 2 + 68)) {
+    if (wasPressed('KeyR') || (click && click.x >= pBtnX && click.x <= pBtnX + pBtnW && click.y >= py + 156 && click.y <= py + 186)) {
       restartGame(state);
+      return;
+    }
+    if (wasPressed('Enter') || wasPressed('NumpadEnter') || (click && click.x >= pBtnX && click.x <= pBtnX + pBtnW && click.y >= py + 194 && click.y <= py + 224)) {
+      Object.assign(state, createGameState());
+      state.gameState = STATE.MENU;
       return;
     }
     return;

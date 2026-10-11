@@ -24,6 +24,16 @@ export const COLORS = {
   black:        '#000000',
   green:        '#4CAF50',
   yellowWarn:   '#FFD700',
+  // Victorian Steampunk Expanded Palette
+  amberGlow:    '#E5A93C',
+  amberDark:    '#A66B14',
+  bronze:       '#8C531B',
+  bronzeDark:   '#522E0C',
+  deepMahogany: '#1C1008',
+  vintageInk:   '#22160C',
+  patina:       '#3A7D6C',
+  goldLeaf:     '#F5DE88',
+  brassBevel:   '#B3862D',
 };
 
 // ── Canvas ──
@@ -39,12 +49,14 @@ export const FRICTION   = 0.82;
 
 // ── Game states ──
 export const STATE = {
-  MENU:       'menu',
-  PLAYING:    'playing',
-  PAUSED:     'paused',
-  VICTORY:    'victory',
-  DEFEAT:     'defeat',
+  MENU:         'menu',
+  PLAYING:      'playing',
+  PAUSED:       'paused',
+  VICTORY:      'victory',
+  DEFEAT:       'defeat',
   INSTRUCTIONS: 'instructions',
+  PERMITS:      'permits',
+  CREDITS:      'credits',
 };
 
 // ── Pressure ──
