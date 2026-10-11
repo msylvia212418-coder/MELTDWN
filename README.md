@@ -118,27 +118,3 @@ npm run preview
 The output files are generated in `dist/`.
 
 ---
-
-## 📹 3–5 Minute Gameplay Video Recording Guide
-
-For the submission video (3 to 5 minutes):
-1. **0:00 – 0:30 (Introduction & Menu):**
-   - Showcase the Victorian title screen, sound toggle, and "Employee Orientation" instructions.
-   - Explain the premise: "The Factory Is Fine. You Are Not."
-2. **0:30 – 1:30 (Early Shift & Bureaucracy):**
-   - Collect initial brass gears.
-   - Try to activate the Generator without a permit to trigger the bureaucratic rejection dialog.
-   - Climb up to find **Form 12-A (Generator Permit)**.
-   - Return and activate the Generator — observe the conveyor belt complication start up!
-3. **1:30 – 2:45 (Hazards, Pressure, & Cursed Upgrades):**
-   - Purchase the **Turbo Boots**; demonstrate the chaotic +80% speed and hilarious low-friction sliding.
-   - Navigate past steam vents and conveyor belts.
-   - Use a valve to relieve pressure; show the factory "recalibrating" the gauge.
-   - Tap the gauge glass with `T` to expose the deceptive reading!
-4. **2:45 – 3:45 (Golden Gear Shortcut & Safety Inspection):**
-   - Obtain **Form 47-B** and collect the **Golden Gear**.
-   - Show the newly unlocked overhead Golden Shortcut Express.
-   - Trigger the Steam Crane and survive the OSHA inspection dialogue.
-5. **3:45 – 4:30 (Grand Finale):**
-   - Reach the Grand Steam Engine and pull the master lever.
-   - Present the signature ending: **Form 47-B: Application for Permission to Celebrate (Status: Pending Review)**.
