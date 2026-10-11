@@ -10,17 +10,17 @@ let frameTick = 0;
 
 // ── Asset preloading ──
 const backdropImg = new Image();
-backdropImg.src = '/assets/factory_backdrop.jpg';
+backdropImg.src = `${import.meta.env.BASE_URL}assets/factory_backdrop.jpg`;
 let backdropLoaded = false;
 backdropImg.onload = () => { backdropLoaded = true; };
 
 const gaugeImg = new Image();
-gaugeImg.src = '/assets/steampunk_gauge.jpg';
+gaugeImg.src = `${import.meta.env.BASE_URL}assets/steampunk_gauge.jpg`;
 let gaugeLoaded = false;
 gaugeImg.onload = () => { gaugeLoaded = true; };
 
 const plaqueImg = new Image();
-plaqueImg.src = '/assets/victorian_plaque.jpg';
+plaqueImg.src = `${import.meta.env.BASE_URL}assets/victorian_plaque.jpg`;
 let plaqueLoaded = false;
 plaqueImg.onload = () => { plaqueLoaded = true; };
 
